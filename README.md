@@ -20,6 +20,10 @@ This change password function will just return True or False back to function ca
 
 <li>To check No duplicate repeat characters more than 4</li>
 
+<li>Old password should match with system</li>
+
+<li>password is not similar to old password < 80% match.</li>
+
 </ul>
 
 <h2>Usage</h2>
@@ -33,6 +37,7 @@ Value = ChangePassword()
 .has().lowercase()<br>
 .has().digits()<br>
 .has().SpecialSymbol()<br>
+match_pwd(old_pass)<br>
 
 <h4>Validate against a password string</h4>
 print(ChangePassword('validPASS123'))<br>
@@ -84,5 +89,9 @@ Rules supported as of now are:
   <tr>
     <td>Counter in symbols()</td>
     <td>not more than 4 special symbols</td>
+  </tr>
+  <tr>
+    <td>match_pwd(old_pass)</td>
+    <td>Old password should match with system</td>
   </tr>
 </table>
