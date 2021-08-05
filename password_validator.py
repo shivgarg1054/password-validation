@@ -65,12 +65,17 @@ def password_check(passwd):
 
 # Main method
 def main():
-    passwd = 'zaqqx$wC$E%VF&12345#'
+    passwd = 'qwertyPOIUYT12345@#$'
 
-    if (password_check(passwd)):
-        print("Password is valid")
-    else:
-        print("Invalid Password !!")
+    passwd = ['qwertyPOIUYT12345@#$','qweqhasjd21376@#$&','asd12@&','zaqxsw12341234@#$$']
+
+    for i in range(0, len(passwd)):
+        if (password_check(passwd[i])):
+            print(passwd[i])
+            print("Password is valid")
+        else:
+            print(passwd[i])
+            print("Invalid Password !!")
 
 
 # Driver Code
