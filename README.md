@@ -1,6 +1,5 @@
 <h2>Change password function<h2>
-
-<p>This change password function will just return True or False back to function caller to inform the caller whether the password can be changed successfully or not.</p>
+This change password function will just return True or False back to function caller to inform the caller whether the password can be changed successfully or not.
 
 <h2>USAGE</h2>
 
@@ -27,3 +26,30 @@ To check No more than 4 special characters
 
 res = Counter(passwd) Function is used
 To check No duplicate repeat characters more than 4
+
+<table style="width:100%">
+  <tr>
+    <th>Rules</th>
+    <th>Descriptions</th>
+  </tr>
+  <tr>
+    <td>digits()</td>
+    <td>specifies password must include digits</td>
+  </tr>
+  <tr>
+    <td>letters()</td>
+    <td>specifies password must include letters</td>
+  </tr>
+    <tr>
+    <th>lowercase()</th>
+    <th>specifies password must include lowercase letters</th>
+  </tr>
+  <tr>
+    <td>uppercase()</td>
+    <td>specifies password must include uppercase letters</td>
+  </tr>
+  <tr>
+    <td>symbols()</td>
+    <td>specifies password must include symbols</td>
+  </tr>
+</table>
