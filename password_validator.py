@@ -14,8 +14,12 @@ def ChangePassword(passwd):
         y = str(res[x])
         if y > '4':
             print()
-            print('duplicate repeat characters more than 4')
+            print('.duplicate repeat characters more than 4')
             return False
+    
+    if (passwd == ""):
+        print("Password field cannot be empty")
+        return False
 
     if len(passwd) < 17:
         print('length should be at least 18')
@@ -76,8 +80,6 @@ class ValidateTests(unittest.TestCase):
 
     def test_empty(self):
         self.assertFalse(ChangePassword(''))
-        print()
-        print(".Password field cannot be empty")
         print()
 
     def test_too_short(self):
