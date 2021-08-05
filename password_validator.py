@@ -3,7 +3,7 @@ import unittest
 
 
 # Function to validate the password
-def validate(passwd):
+def ChangePassword(passwd):
     SpecialSym = ['!', '@', '#', '$', '&', '*']
     value = True
     upper, lower, number, special, count, total = 0, 0, 0, 0, 0, 0
@@ -13,6 +13,7 @@ def validate(passwd):
         x = max(res, key=res.get)
         y = str(res[x])
         if y > '4':
+            print()
             print('duplicate repeat characters more than 4')
             return False
 
@@ -57,6 +58,7 @@ def validate(passwd):
             pass
 
     if (count > 4):
+        print("No more than 4 special characters")
         return False
 
     total = upper + lower + number + count
@@ -73,34 +75,56 @@ def validate(passwd):
 class ValidateTests(unittest.TestCase):
 
     def test_empty(self):
-        self.assertFalse(validate(''))
+        self.assertFalse(ChangePassword(''))
+        print()
+        print(".Password field cannot be empty")
+        print()
 
     def test_too_short(self):
-        self.assertFalse(validate('aAbB1!?'))
+        self.assertFalse(ChangePassword('aAbB1!?'))
+        print()
 
     def test_too_long(self):
-        self.assertTrue(validate('zaqxswcdevfrBGTNHYMJUKILOp1234567890@#$&'))
+        self.assertTrue(ChangePassword('zaqxswcdevfrBGTNHYMJUKILOp1234567890@#$&'))
         print("valid")
+        print()
 
     def test_no_number(self):
-        self.assertFalse(validate("zaqxscdevfrbgtnhyqw$$&"))
+        self.assertFalse(ChangePassword("zaqxscdevfrbgtnhyqw$$&"))
+        print()
 
     def test_no_upper(self):
-        self.assertFalse(validate("aabbzzqwetuwqte"))
+        self.assertFalse(ChangePassword("aabbzpoiuzqwetu123$"))
+        print()
 
     def test_no_lower(self):
-        self.assertFalse(validate("%&AABBCCQWERTY1234$"))
+        self.assertFalse(ChangePassword("%&AABBCCQWERTYZX1234$"))
+        print()
 
     def test_no_special(self):
-        self.assertFalse(validate("aAbmMC19zaqxswASD12"))
+        self.assertFalse(ChangePassword("aAbmMC19zaqxswASD123"))
+        print()
 
     def test_duplicate_repeat(self):
-        self.assertFalse(validate('aaaaaaaZAQXSWCDE1234#$'))
-        print("Failed here")
+        self.assertFalse(ChangePassword('aaaaaaaZAQXSWCDE1234#$'))
+        print()
+
+    def test_number_count(self):
+        self.assertFalse(ChangePassword("qweTYnm12345689012#$$"))
+        print()
+
+    def test_more_then_4_sc(self):
+        self.assertFalse(ChangePassword("qwertyPOIUYT12345#$#$#"))
+        print()
+
+    def test_sc_not_allowed(self):
+        self.assertFalse(ChangePassword("qwertyPOIUYT12345@#%"))
+        print()
 
     def test_valid(self):
-        self.assertTrue(validate("qwertyPOIUYT12345@#$"))
+        self.assertTrue(ChangePassword("qwertyPOIUYT12345@#$"))
         print("valid")
+        print()
 
 
 # Driver Code
