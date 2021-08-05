@@ -28,17 +28,17 @@ This change password function will just return True or False back to function ca
 Value = ChangePassword()
 
 <h4>Add properties to it</h4>
-.min(18)\
-.has().uppercase()\
-.has().lowercase()\
-.has().digits()\
-.has().SpecialSymbol()\
+.min(18)<br>
+.has().uppercase()<br>
+.has().lowercase()<br>
+.has().digits()<br>
+.has().SpecialSymbol()<br>
 
 <h4>Validate against a password string</h4>
-print(ChangePassword('validPASS123'));
-print(True)
-print(ChangePassword('invalidPASS'));
-print(False)
+print(ChangePassword('validPASS123'))<br>
+print(True)<br>
+print(ChangePassword('invalidPASS'))<br>
+print(False)<br>
 
 
 <h2>Rules</h2>
