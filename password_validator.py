@@ -1,9 +1,11 @@
 from collections import Counter
+from logging import currentframe
 import unittest
 
-
+Current_Passwd = "zaqxswcdeVFRBGTMJU123456$$&"
+old_pass = input()
 # Function to validate the password
-def ChangePassword(passwd):
+def ChangePassword(Old_passwd, passwd):
     SpecialSym = ['!', '@', '#', '$', '&', '*']
     value = True
     upper, lower, number, special, count, total = 0, 0, 0, 0, 0, 0
@@ -79,53 +81,55 @@ def ChangePassword(passwd):
 class ValidateTests(unittest.TestCase):
 
     def test_empty(self):
-        self.assertFalse(ChangePassword(''))
+        self.assertFalse(ChangePassword(old_pass, ''))
         print()
 
     def test_too_short(self):
-        self.assertFalse(ChangePassword('aAbB1!?'))
+        self.assertFalse(ChangePassword(Current_Passwd, 'aAbB1!?'))
         print()
 
     def test_too_long(self):
-        self.assertTrue(ChangePassword('zaqxswcdevfrBGTNHYMJUKILOp1234567890@#$&'))
-        print("valid")
+        self.assertTrue(ChangePassword(Current_Passwd, 'zaqxswcdevfrBGTNHYMJUKILOp1234567890@#$&'))
+        print("valid Password")
+        print("Password is updated")
         print()
 
     def test_no_number(self):
-        self.assertFalse(ChangePassword("zaqxscdevfrbgtnhyqw$$&"))
+        self.assertFalse(ChangePassword(Current_Passwd, "zaqxscdevfrbgtnhyqw$$&"))
         print()
 
     def test_no_upper(self):
-        self.assertFalse(ChangePassword("aabbzpoiuzqwetu123$"))
+        self.assertFalse(ChangePassword(Current_Passwd, "aabbzpoiuzqwetu123$"))
         print()
 
     def test_no_lower(self):
-        self.assertFalse(ChangePassword("%&AABBCCQWERTYZX1234$"))
+        self.assertFalse(ChangePassword(Current_Passwd, "%&AABBCCQWERTYZX1234$"))
         print()
 
     def test_no_special(self):
-        self.assertFalse(ChangePassword("aAbmMC19zaqxswASD123"))
+        self.assertFalse(ChangePassword(Current_Passwd, "aAbmMC19zaqxswASD123"))
         print()
 
     def test_duplicate_repeat(self):
-        self.assertFalse(ChangePassword('aaaaaaaZAQXSWCDE1234#$'))
+        self.assertFalse(ChangePassword(Current_Passwd, 'aaaaaaaZAQXSWCDE1234#$'))
         print()
 
     def test_number_count(self):
-        self.assertFalse(ChangePassword("qweTYnm12345689012#$$"))
+        self.assertFalse(ChangePassword(Current_Passwd, "qweTYnm12345689012#$$"))
         print()
 
     def test_more_then_4_sc(self):
-        self.assertFalse(ChangePassword("qwertyPOIUYT12345#$#$#"))
+        self.assertFalse(ChangePassword(Current_Passwd, "qwertyPOIUYT12345#$#$#"))
         print()
 
     def test_sc_not_allowed(self):
-        self.assertFalse(ChangePassword("qwertyPOIUYT12345@#%"))
+        self.assertFalse(ChangePassword(Current_Passwd, "qwertyPOIUYT12345@#%"))
         print()
 
     def test_valid(self):
-        self.assertTrue(ChangePassword("qwertyPOIUYT12345@#$"))
-        print("valid")
+        self.assertTrue(ChangePassword(Current_Passwd, "qwertyPOIUYT12345@#$"))
+        print("valid password")
+        print("Password is Updated")
         print()
 
 
