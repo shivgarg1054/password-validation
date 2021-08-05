@@ -3,7 +3,13 @@ from logging import currentframe
 import unittest
 
 Current_Passwd = "zaqxswcdeVFRBGTMJU123456$$&"
-old_pass = input()
+
+def match_pwd(pwd):
+    return pwd == get_current_pwd()
+
+def get_current_pwd():
+    return Current_Passwd
+
 # Function to validate the password
 def ChangePassword(Old_passwd, passwd):
     SpecialSym = ['!', '@', '#', '$', '&', '*']
@@ -135,4 +141,10 @@ class ValidateTests(unittest.TestCase):
 
 # Driver Code
 if __name__ == '__main__':
-    unittest.main()
+    old_pass = input("Enter the old password : ")
+    value = match_pwd(old_pass)
+    print(value)
+    if value == True:
+        unittest.main()
+    else:
+        print("please enter correct old password")
