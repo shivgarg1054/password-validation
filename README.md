@@ -24,23 +24,21 @@ This change password function will just return True or False back to function ca
 
 <h2>Usage</h2>
 
-from password_validator import PasswordValidator
-
-# Create a schema
+<h4>Create a schema</h4>
 Value = ChangePassword()
 
-# Add properties to it
+<h4>Add properties to it</h4>
 .min(18)\
 .has().uppercase()\
 .has().lowercase()\
 .has().digits()\
 .has().SpecialSymbol()\
 
-# Validate against a password string
+<h4>Validate against a password string</h4>
 print(ChangePassword('validPASS123'));
-# => True
+print(True)
 print(ChangePassword('invalidPASS'));
-# => False
+print(False)
 
 
 <h2>Rules</h2>
