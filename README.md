@@ -27,6 +27,9 @@ To check No more than 4 special characters
 res = Counter(passwd) Function is used
 To check No duplicate repeat characters more than 4
 
+<h2>Rules</h2>
+Rules supported as of now are:
+
 <table style="width:100%">
   <tr>
     <th>Rules</th>
@@ -41,8 +44,8 @@ To check No duplicate repeat characters more than 4
     <td>specifies password must include letters</td>
   </tr>
     <tr>
-    <th>lowercase()</th>
-    <th>specifies password must include lowercase letters</th>
+    <td>lowercase()</th>
+    <td>specifies password must include lowercase letters</th>
   </tr>
   <tr>
     <td>uppercase()</td>
