@@ -1,9 +1,8 @@
-#Change password function
+<h2>Change password function<h2>
 
-This change password function will just return True or False back to function caller to inform the caller
-whether the password can be changed successfully or not.
+<p>This change password function will just return True or False back to function caller to inform the caller whether the password can be changed successfully or not.</p>
 
-**************************************USAGE****************************************************
+<h2>USAGE</h2>
 
 len(passwd) > 17
 length should be at least 18
