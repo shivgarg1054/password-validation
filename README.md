@@ -3,10 +3,10 @@
 This change password function will just return True or False back to function caller to inform the caller
 whether the password can be changed successfully or not.
 
--------------------------------------------USAGE-----------------------------------------
+**************************************USAGE****************************************************
+
 len(passwd) > 17
 length should be at least 18
-          
           
 char.isdigit() for char in passwd
 To Check Password should have at least one numeral
