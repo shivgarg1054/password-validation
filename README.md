@@ -1,31 +1,26 @@
 <h2>Change password function<h2>
 This change password function will just return True or False back to function caller to inform the caller whether the password can be changed successfully or not.
 
-<h2>USAGE</h2>
+<h2>Validation Implemented</h2>
 
-len(passwd) > 17
-length should be at least 18
+<ul>
+<li>length should be at least 18</li>
           
-char.isdigit() for char in passwd
-To Check Password should have at least one numeral
+<li>To Check Password should have at least one numeral</li>
           
-char.isupper() for char in passwd
-To Check Password should have at least one uppercase letter
+<li>To Check Password should have at least one uppercase letter</li>
           
-char.islower() for char in passwd
-To Check Password should have at least one lowercase letter
+<li>To Check Password should have at least one lowercase letter</li>
           
-char in SpecialSym for char in passwd
-to check Password should have at least one of the symbols !@#$&*
+<li>To check Password should have at least one of the symbols !@#$&*</li>
 
-Counter is used in char.isdigit() 
-To check 50 % of password should not be a number
+<li>To check 50 % of password should not be a number</li>
 
-Counter is used in char in SpecialSym
-To check No more than 4 special characters
+<li>To check No more than 4 special characters</li>
 
-res = Counter(passwd) Function is used
-To check No duplicate repeat characters more than 4
+<li>To check No duplicate repeat characters more than 4</li>
+
+</ul>
 
 <h2>Rules</h2>
 Rules supported as of now are:
@@ -54,5 +49,21 @@ Rules supported as of now are:
   <tr>
     <td>symbols()</td>
     <td>specifies password must include symbols</td>
+  </tr>
+      <tr>
+    <td>len()</th>
+    <td>length of password should be more then 18</th>
+  </tr>
+  <tr>
+    <td>Counter in char.isdigit() </td>
+    <td>To check 50 % of password should not be a number</td>
+  </tr>
+  <tr>
+    <td>Counter(passwd)</td>
+    <td>specifies password must include symbols</td>
+  </tr>
+  <tr>
+    <td>Counter in symbols()</td>
+    <td>not more than 4 special symbols</td>
   </tr>
 </table>
