@@ -1,6 +1,7 @@
 from collections import Counter
 from logging import currentframe
 import unittest
+from fuzzywuzzy import fuzz
 
 Current_Passwd = "zaqxswcdeVFRBGTMJU123456$$&"
 
@@ -15,6 +16,12 @@ def ChangePassword(Old_passwd, passwd):
     SpecialSym = ['!', '@', '#', '$', '&', '*']
     value = True
     upper, lower, number, special, count, total = 0, 0, 0, 0, 0, 0
+
+    Ratio = fuzz.ratio(Old_passwd,passwd)
+
+    if (Ratio >= 80):
+        print(" old password is " + str(Ratio)+  "% match new password")
+        return False
 
     if (passwd != ""):
         res = Counter(passwd)
@@ -136,6 +143,10 @@ class ValidateTests(unittest.TestCase):
         self.assertTrue(ChangePassword(Current_Passwd, "qwertyPOIUYT12345@#$"))
         print("valid password")
         print("Password is Updated")
+        print()
+
+    def test_old_new_passmatch(self):
+        self.assertFalse(ChangePassword(Current_Passwd,"ZAQxswcdeVFRBGTMJU123456$$&"))
         print()
 
 
