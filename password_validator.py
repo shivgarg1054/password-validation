@@ -152,7 +152,7 @@ class ValidateTests(unittest.TestCase):
 
 # Driver Code
 if __name__ == '__main__':
-    old_pass = input("Enter the old password : ")
+    old_pass = Current_Passwd
     value = match_pwd(old_pass)
     print(value)
     if value == True:
