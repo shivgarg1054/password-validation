@@ -104,7 +104,7 @@ class ValidateTests(unittest.TestCase):
     def test_too_long(self):
         self.assertTrue(ChangePassword(Current_Passwd, 'zaqxswcdevfrBGTNHYMJUKILOp1234567890@#$&'))
         print("valid Password")
-        print("Password is updated")
+        print("New Password is updated")
         print()
 
     def test_no_number(self):
@@ -142,7 +142,7 @@ class ValidateTests(unittest.TestCase):
     def test_valid(self):
         self.assertTrue(ChangePassword(Current_Passwd, "qwertyPOIUYT12345@#$"))
         print("valid password")
-        print("Password is Updated")
+        print("New Password is Updated")
         print()
 
     def test_old_new_passmatch(self):
@@ -152,10 +152,20 @@ class ValidateTests(unittest.TestCase):
 
 # Driver Code
 if __name__ == '__main__':
-    old_pass = Current_Passwd
+    old_pass = "zaqxswcdeVFRBGTMJU123456"
     value = match_pwd(old_pass)
-    print(value)
     if value == True:
         unittest.main()
     else:
         print("please enter correct old password")
+        print()
+        old_pass = Current_Passwd
+        value = match_pwd(old_pass)
+        if value:
+            print("Old passord enter was correct")
+            print()
+            print("please enter new password")
+            print()
+            unittest.main()
+        else:
+            print("Exceeding max number of chances")
