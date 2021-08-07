@@ -38,6 +38,7 @@ Value = ChangePassword()
 .has().digits()<br>
 .has().SpecialSymbol()<br>
 match_pwd(old_pass)<br>
+fuzz.ratio(Old_passwd,passwd)<br>
 
 <h4>Validate against a password string</h4>
 print(ChangePassword('validPASS123'))<br>
@@ -93,5 +94,9 @@ Rules supported as of now are:
   <tr>
     <td>match_pwd(old_pass)</td>
     <td>Old password should match with system</td>
+  </tr>
+  <tr>
+  <td>fuzz.ratio(Old_passwd,passwd)</td>
+  <td>password is not similar to old password < 80% match</td>
   </tr>
 </table>
